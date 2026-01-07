@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isa-dlc15 | Portafolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #161616;
+            --accent: #00f2ff;
+            --text: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px; /* Reducido para móviles */
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: auto; 
+        }
+
+        header { 
+            border-bottom: 2px solid var(--accent); 
+            padding-bottom: 20px; 
+            margin-bottom: 40px; 
+            text-align: center; /* Centrado para mejor estética móvil */
+        }
+        
+        h1 { color: var(--accent); margin: 0; font-size: clamp(1.8rem, 5vw, 2.5rem); }
+
+        /* Contenedor de tabla responsive */
+        .table-container {
+            width: 100%;
+            overflow-x: auto; /* Permite scroll horizontal en móviles */
+            margin: 20px 0;
+            border: 1px solid #333;
+        }
+
+        .tech-stack-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 400px; /* Evita que se colapse demasiado */
+            background: var(--card-bg);
+        }
+
+        .tech-stack-table th, .tech-stack-table td {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .tech-stack-table th { background-color: #222; color: var(--accent); }
+
+        /* Grid de Proyectos Responsive */
+        .project-grid {
+            display: grid;
+            /* Crea columnas automáticas de mínimo 280px */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0, 242, 255, 0.1);
+        }
+        
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap; /* Para que las etiquetas no se salgan */
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            background: #222;
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: var(--accent);
+            border: 1px solid #444;
+        }
+
+        /* Ajustes para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            body { padding: 35px 20px; }
+            header { text-align: left; }
+            h2 { font-size: 1.4rem; }
+        }
+
+        /* Sección de Contacto */
+        #contacto {
+            margin-top: 60px;
+            padding-bottom: 50px;
+        }
+
+        .contacto-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .redes-sociales {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-link {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: color 0.3s;
+        }
+
+        .social-link i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .social-link i.fa-whatsapp:hover {
+            color: #25D366;
+        }
+
+        .social-link:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive para Contacto */
+        @media (max-width: 768px) {
+            .contacto-container {
+                grid-template-columns: 1fr;
+            }
+            .redes-sociales {
+                order: 2;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1> Isa.dlc [Dev]</h1>
+        <p>Estudiante de Ing. en Sistemas | Universidad Mesoamericana</p>
+    </header>
+
+    <section>
+        <h2>01. Stack Tecnológico</h2>
+        <div class="table-container">
+            <table class="tech-stack-table">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Tecnologías</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Frontend</strong></td><td>React, JS, HTML/CSS, Bootstrap</td></tr>
+                    <tr><td><strong>Backend</strong></td><td>Node.js, PHP, Python, base de datos</td></tr>
+                    <tr><td><strong>Low Level</strong></td><td>C, C++, Ingeniería Inversa</td></tr>
+                    <tr><td><strong>Tools</strong></td><td>Git, XAMPP, Google APIs</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>02. Proyectos destacados</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Personal Search Assistant</h3>
+                <p>Asistente inteligente con integración de APIs para optimización de búsquedas.</p>
+                <div class="tag-container">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Google API</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Store Manager CRUD</h3>
+                <p>Sistema de gestión de inventario con base de datos relacional para control de stock.</p>
+                <div class="tag-container">
+                    <span class="tag">PHP</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Xampp</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Pomodoro Study Tool</h3>
+                <p>Aplicación de productividad diseñada desde mockups para mejorar el enfoque.</p>
+                <div class="tag-container">
+                    <span class="tag">JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <section id="contacto">
+        <h2>03. Contacto</h2>
+        <div class="contacto-container">
+            
+            <div class="redes-sociales">
+                <p>¿Tienes algún proyecto en mente o alguna consulta técnica? ¡Hablemos!</p>
+                
+                <a href="https://github.com/Isa-dlc15" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i> github.com/Isa-dlc15
+                </a>
+                
+                <a href="https://wa.me/50200000000" target="_blank" class="social-link">
+                    <i class="fab fa-whatsapp"></i> +502 5224-9118
+                </a>
+                
+                <a href="mailto:tu-correo@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i> deleonisaias13@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
